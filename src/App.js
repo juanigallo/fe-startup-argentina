@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Nav from "./components/Navbar";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ""
+    };
+  }
+
+  handleData(inputValue) {
+    this.setState({
+      inputValue: inputValue
+    });
+  }
+
+  render() {
+    const { inputValue } = this.state;
+    return (
+      <>
+        <Nav getData={(inputValue) => this.handleData(inputValue)} />
+        <Cards filter={inputValue} />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

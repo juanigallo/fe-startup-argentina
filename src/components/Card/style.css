@@ -1,0 +1,15 @@
+.cardContainer {
+  width: calc(50% - 22px);
+  display: flex;
+  align-items: center;
+  border: 1px solid #333;
+  margin: 5px;
+}
+
+.cardContainer .imgContainer {
+  width: 30%;
+}
+
+.cardContainer .imgContainer img {
+  width: 100%;
+}
