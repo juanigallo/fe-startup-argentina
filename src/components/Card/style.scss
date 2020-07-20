@@ -1,0 +1,14 @@
+.cardContainer {
+  $borderColor: #333;
+  width: calc(50% - 22px);
+  display: flex;
+  align-items: center;
+  border: 1px solid $borderColor;
+  margin: 5px;
+  .imgContainer {
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+}

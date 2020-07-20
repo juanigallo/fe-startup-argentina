@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./components/Navbar";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
-import "./App.css";
+import "./App.scss";
 import { Link } from "react-router-dom";
 
 class App extends React.Component {

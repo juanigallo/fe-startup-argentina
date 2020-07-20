@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   handleChange(e) {
@@ -20,7 +21,9 @@ class Navbar extends React.Component {
             placeholder="Buscar startup"
           />
         </div>
-        <button>Agregar Startup</button>
+        <Link to="/agregar">
+          <button>Agregar Startup</button>
+        </Link>
       </nav>
     );
   }
