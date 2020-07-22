@@ -23,7 +23,10 @@ class App extends React.Component {
     const { inputValue } = this.state;
     return (
       <>
-        <Nav getData={(inputValue) => this.handleData(inputValue)} />
+        <Nav
+          showAutocomplete={true}
+          getData={(inputValue) => this.handleData(inputValue)}
+        />
         <Cards filter={inputValue} />
         <Footer />
         <Link to="/prueba">Ir a prueba</Link>

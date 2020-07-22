@@ -1,14 +1,19 @@
-.cardContainer {
-  $borderColor: #333;
-  width: calc(50% - 22px);
+a {
+  color: inherit;
+  text-decoration: none;
   display: flex;
-  align-items: center;
-  border: 1px solid $borderColor;
+  width: calc(50% - 22px);
   margin: 5px;
-  .imgContainer {
-    width: 30%;
-    img {
-      width: 100%;
+  align-items: center;
+  .cardContainer {
+    $borderColor: #333;
+    display: flex;
+    border: 1px solid $borderColor;
+    .imgContainer {
+      width: 30%;
+      img {
+        width: 100%;
+      }
     }
   }
 }

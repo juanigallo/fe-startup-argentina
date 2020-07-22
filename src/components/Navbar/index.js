@@ -11,15 +11,18 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const { showAutocomplete } = this.props;
     return (
       <nav>
         <div className="autocompleteContainer">
           <h1>Startup argentina</h1>
-          <input
-            onChange={(e) => this.handleChange(e)}
-            type=""
-            placeholder="Buscar startup"
-          />
+          {showAutocomplete && (
+            <input
+              onChange={(e) => this.handleChange(e)}
+              type=""
+              placeholder="Buscar startup"
+            />
+          )}
         </div>
         <Link to="/agregar">
           <button>Agregar Startup</button>

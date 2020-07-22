@@ -5,11 +5,13 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Agregar from "./pages/agregar";
+import ProductPage from "./pages/ProductPage";
 
 ReactDOM.render(
   <Router>
     <Route exact path="/" component={App} />
     <Route exact path="/agregar" component={Agregar} />
+    <Route exact path="/productos/:productId" component={ProductPage} />
   </Router>,
   document.getElementById("root")
 );

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../Card";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 class Cards extends React.Component {
   constructor(props) {
@@ -32,12 +33,14 @@ class Cards extends React.Component {
           return (
             <React.Fragment>
               {card.name.toLowerCase().includes(filter.toLowerCase()) && (
-                <Card
-                  key={key}
-                  name={card.name}
-                  img={card.img}
-                  desc={card.desc}
-                />
+                <Link to={`/productos/${card.name.toLowerCase()}`}>
+                  <Card
+                    key={key}
+                    name={card.name}
+                    img={card.img}
+                    desc={card.desc}
+                  />
+                </Link>
               )}
             </React.Fragment>
           );
