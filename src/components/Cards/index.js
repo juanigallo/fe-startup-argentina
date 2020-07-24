@@ -13,11 +13,13 @@ class Cards extends React.Component {
 
   componentDidMount() {
     const startups = localStorage.getItem("startups"); // Leemos las startups del LS
-    const parsedStartups = JSON.parse(startups); // Transformamos de string a json
+    if (startups) {
+      const parsedStartups = JSON.parse(startups); // Transformamos de string a json
 
-    this.setState({
-      cards: parsedStartups
-    });
+      this.setState({
+        cards: parsedStartups
+      });
+    }
   }
 
   render() {
