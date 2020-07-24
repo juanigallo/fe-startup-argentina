@@ -30,6 +30,35 @@ class Agregar extends React.Component {
     const { name, email, logo, desc } = this.state;
     const isValid = name && email && logo && desc ? true : false;
 
+    if (isValid) {
+      //ACA AGREGO AL LOCALSTORAGE
+      const oldStartups = localStorage.getItem("startups"); // este es el paso 1
+
+      if (oldStartups) {
+        const parsedOldStartups = JSON.parse(oldStartups);
+        parsedOldStartups.push({
+          name,
+          email,
+          logo,
+          desc
+        }); // Esto es el paso 2
+
+        const newStartups = JSON.stringify(parsedOldStartups);
+        localStorage.setItem("startups", newStartups); // Este es el paso 3
+      } else {
+        const startups = [];
+        startups.push({
+          name,
+          email,
+          logo,
+          desc
+        });
+
+        const startupsToString = JSON.stringify(startups);
+        localStorage.setItem("startups", startupsToString);
+      }
+    }
+
     this.setState({
       estaOk: isValid,
       showMessage: true

@@ -14,8 +14,13 @@ class ProductPage extends React.Component {
 
   componentDidMount() {
     const filtered = startups.filter((startup) => {
-      return startup.id == this.props.match.params.productId;
+      return (
+        startup.id.toLowerCase() ==
+        this.props.match.params.productId.toLowerCase()
+      );
     });
+
+    console.log(filtered);
 
     this.setState({
       name: filtered[0].name,
@@ -23,8 +28,10 @@ class ProductPage extends React.Component {
       desc: filtered[0].desc
     });
   }
+
   render() {
     const { img, name, desc } = this.state;
+
     return (
       <div>
         <img src={img} />

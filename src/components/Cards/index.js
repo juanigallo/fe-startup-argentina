@@ -7,21 +7,17 @@ class Cards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [
-        {
-          name: "CourseIt",
-          img:
-            "https://pbs.twimg.com/profile_images/1259719811296309249/um6CLRiM_400x400.jpg",
-          desc: "Desc courseit"
-        },
-        {
-          name: "Endava",
-          img:
-            "https://pbs.twimg.com/profile_images/1052208764726730753/s5bagDr__400x400.jpg",
-          desc: "Desc endava"
-        }
-      ]
+      cards: []
     };
+  }
+
+  componentDidMount() {
+    const startups = localStorage.getItem("startups"); // Leemos las startups del LS
+    const parsedStartups = JSON.parse(startups); // Transformamos de string a json
+
+    this.setState({
+      cards: parsedStartups
+    });
   }
 
   render() {
@@ -37,7 +33,7 @@ class Cards extends React.Component {
                   <Card
                     key={key}
                     name={card.name}
-                    img={card.img}
+                    img={card.logo}
                     desc={card.desc}
                   />
                 </Link>

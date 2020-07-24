@@ -19,6 +19,11 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    const personToString = localStorage.getItem("personToString");
+    const person = JSON.parse(personToString);
+  }
+
   render() {
     const { inputValue } = this.state;
     return (
